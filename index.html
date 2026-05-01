@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>旅プラン自動生成 - TravelGen</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header class="header">
+  <h1>✈️ TravelGen</h1>
+  <p class="subtitle">条件を選ぶだけで、あなたの旅プランを自動生成</p>
+</header>
+
+<main class="container">
+  <section class="form-card">
+    <h2>旅の条件を入力</h2>
+    <form id="plan-form">
+      <div class="field">
+        <label for="destination">行き先タイプ</label>
+        <select id="destination" required>
+          <option value="city">都市観光（東京・大阪・京都・横浜など）</option>
+          <option value="beach">ビーチリゾート（沖縄・宮古島・石垣島など）</option>
+          <option value="mountain">山・自然（北海道・長野・屋久島など）</option>
+          <option value="hotspring">温泉地（箱根・草津・別府・由布院など）</option>
+          <option value="overseas_asia">海外アジア（韓国・台湾・タイ・ベトナム）</option>
+          <option value="overseas_europe">海外ヨーロッパ（パリ・ローマ・バルセロナ）</option>
+          <option value="overseas_america">海外アメリカ（NY・LA・ハワイ）</option>
+        </select>
+      </div>
+
+      <div class="field-row">
+        <div class="field">
+          <label for="days">日数</label>
+          <select id="days">
+            <option value="1">日帰り</option>
+            <option value="2">1泊2日</option>
+            <option value="3" selected>2泊3日</option>
+            <option value="4">3泊4日</option>
+            <option value="5">4泊5日</option>
+            <option value="7">6泊7日</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="budget">予算（一人あたり）</label>
+          <select id="budget">
+            <option value="low">節約（〜3万円）</option>
+            <option value="mid" selected>標準（3〜10万円）</option>
+            <option value="high">贅沢（10万円〜）</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="field-row">
+        <div class="field">
+          <label for="season">季節</label>
+          <select id="season">
+            <option value="spring">春（3〜5月）</option>
+            <option value="summer" selected>夏（6〜8月）</option>
+            <option value="autumn">秋（9〜11月）</option>
+            <option value="winter">冬（12〜2月）</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="party">同行者</label>
+          <select id="party">
+            <option value="solo">一人旅</option>
+            <option value="couple" selected>カップル</option>
+            <option value="family">家族</option>
+            <option value="friends">友人グループ</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="field">
+        <label>テーマ（複数選択可）</label>
+        <div class="chips">
+          <label class="chip"><input type="checkbox" value="food"> グルメ</label>
+          <label class="chip"><input type="checkbox" value="culture"> 文化・歴史</label>
+          <label class="chip"><input type="checkbox" value="nature"> 自然</label>
+          <label class="chip"><input type="checkbox" value="shopping"> ショッピング</label>
+          <label class="chip"><input type="checkbox" value="relax"> のんびり</label>
+          <label class="chip"><input type="checkbox" value="adventure"> アクティビティ</label>
+          <label class="chip"><input type="checkbox" value="photo"> 写真映え</label>
+        </div>
+      </div>
+
+      <button type="submit" class="btn-primary">🎲 プランを生成</button>
+    </form>
+  </section>
+
+  <section id="result" class="result-card hidden"></section>
+</main>
+
+<footer class="footer">
+  <p>© TravelGen — 自動生成された旅プランは参考情報です</p>
+</footer>
+
+<script src="app.js"></script>
+</body>
+</html>
