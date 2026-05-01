@@ -9,24 +9,30 @@
 <body>
 <header class="header">
   <h1>✈️ TravelGen</h1>
-  <p class="subtitle">条件を選ぶだけで、あなたの旅プランを自動生成</p>
+  <p class="subtitle">条件を選ぶだけで、具体的な場所と宿まで自動提案</p>
 </header>
 
 <main class="container">
   <section class="form-card">
     <h2>旅の条件を入力</h2>
     <form id="plan-form">
-      <div class="field">
-        <label for="destination">行き先タイプ</label>
-        <select id="destination" required>
-          <option value="city">都市観光（東京・大阪・京都・横浜など）</option>
-          <option value="beach">ビーチリゾート（沖縄・宮古島・石垣島など）</option>
-          <option value="mountain">山・自然（北海道・長野・屋久島など）</option>
-          <option value="hotspring">温泉地（箱根・草津・別府・由布院など）</option>
-          <option value="overseas_asia">海外アジア（韓国・台湾・タイ・ベトナム）</option>
-          <option value="overseas_europe">海外ヨーロッパ（パリ・ローマ・バルセロナ）</option>
-          <option value="overseas_america">海外アメリカ（NY・LA・ハワイ）</option>
-        </select>
+      <div class="field-row">
+        <div class="field">
+          <label for="destination">行き先エリア</label>
+          <select id="destination" required>
+            <option value="city">都市観光（国内）</option>
+            <option value="beach">ビーチリゾート（国内）</option>
+            <option value="mountain">山・自然（国内）</option>
+            <option value="hotspring">温泉地（国内）</option>
+            <option value="overseas_asia">海外アジア</option>
+            <option value="overseas_europe">海外ヨーロッパ</option>
+            <option value="overseas_america">海外アメリカ</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="city">具体的な行き先</label>
+          <select id="city" required></select>
+        </div>
       </div>
 
       <div class="field-row">
@@ -93,9 +99,10 @@
 </main>
 
 <footer class="footer">
-  <p>© TravelGen — 自動生成された旅プランは参考情報です</p>
+  <p>© TravelGen — 営業時間・料金は変更される場合があります。事前にご確認ください</p>
 </footer>
 
+<script src="data.js"></script>
 <script src="app.js"></script>
 </body>
 </html>
