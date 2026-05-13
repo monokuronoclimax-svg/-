@@ -519,19 +519,406 @@ const CITY_DATA = {
       mid: [{ name: 'Sheraton Waikiki', area: 'ワイキキ', price: '40,000円〜' }],
       high: [{ name: 'Halekulani', area: 'ワイキキ', price: '90,000円〜' }]
     }
+  },
+
+  // ===== 追加：国内都市 =====
+  nagoya: {
+    name: '名古屋', area: 'Nagoya Japan',
+    spots: [
+      { name: '名古屋城', themes: ['culture', 'photo'], desc: '金鯱で有名な名城' },
+      { name: '熱田神宮', themes: ['culture'], desc: '草薙剣を祀る格式高い神社' },
+      { name: 'オアシス21', themes: ['photo', 'shopping'], desc: '水の宇宙船と栄の夜景' },
+      { name: 'トヨタ産業技術記念館', themes: ['culture', 'adventure'], desc: '体験型の博物館' },
+      { name: 'ノリタケの森', themes: ['culture', 'photo'], desc: '陶磁器の工場跡地公園' }
+    ],
+    food: [
+      { name: '矢場とん 矢場町本店', themes: ['food'], desc: '名物・味噌カツ' },
+      { name: 'ひつまぶし 名古屋備長 エスカ店', themes: ['food'], desc: '名古屋名物のひつまぶし' },
+      { name: '世界の山ちゃん 本店', themes: ['food'], desc: '幻の手羽先' }
+    ],
+    hotels: {
+      low: [{ name: '東横INN名古屋駅桜通口本館', area: '名古屋駅', price: '7,500円〜' }],
+      mid: [{ name: 'ホテルナゴヤキャッスル', area: '名古屋城近く', price: '20,000円〜' }],
+      high: [{ name: '名古屋マリオットアソシアホテル', area: '名古屋駅直結', price: '40,000円〜' }]
+    }
+  },
+
+  kobe: {
+    name: '神戸', area: 'Kobe Japan',
+    spots: [
+      { name: '北野異人館街', themes: ['culture', 'photo'], desc: '明治の洋館が並ぶ街並み' },
+      { name: 'メリケンパーク・神戸ポートタワー', themes: ['photo', 'relax'], desc: '港の夜景の名所' },
+      { name: '南京町（神戸中華街）', themes: ['food', 'culture'], desc: '食べ歩きグルメ' },
+      { name: '六甲山・摩耶山掬星台', themes: ['photo', 'nature'], desc: '1000万ドルの夜景' },
+      { name: '有馬温泉（市内から30分）', themes: ['relax'], desc: '金泉・銀泉の名湯' }
+    ],
+    food: [
+      { name: 'ステーキランド神戸館', themes: ['food'], desc: '本場の神戸ビーフ鉄板焼' },
+      { name: '老祥記', themes: ['food'], desc: '南京町の名物豚まん' }
+    ],
+    hotels: {
+      low: [{ name: '東横INN神戸三ノ宮I', area: '三宮', price: '8,000円〜' }],
+      mid: [{ name: '神戸メリケンパークオリエンタルホテル', area: 'メリケンパーク', price: '22,000円〜' }],
+      high: [{ name: 'ホテル ラ・スイート神戸ハーバーランド', area: 'ハーバーランド', price: '45,000円〜' }]
+    }
+  },
+
+  kanazawa: {
+    name: '金沢', area: 'Kanazawa Japan',
+    spots: [
+      { name: '兼六園', themes: ['nature', 'culture', 'photo'], desc: '日本三名園のひとつ' },
+      { name: '金沢21世紀美術館', themes: ['culture', 'photo'], desc: 'スイミング・プール作品で有名' },
+      { name: 'ひがし茶屋街', themes: ['photo', 'culture'], desc: '格子戸の続く伝統的街並み' },
+      { name: '近江町市場', themes: ['food'], desc: '海鮮丼の宝庫' },
+      { name: '金沢城公園', themes: ['culture'], desc: '加賀百万石の居城跡' },
+      { name: '妙立寺（忍者寺）', themes: ['culture', 'adventure'], desc: '仕掛け満載の寺' }
+    ],
+    food: [
+      { name: '回転寿司 もりもり寿し 近江町店', themes: ['food'], desc: '日本海の新鮮ネタ' },
+      { name: '茶房 一笑', themes: ['food'], desc: 'ひがし茶屋街の和カフェ' }
+    ],
+    hotels: {
+      low: [{ name: '東横INN金沢駅東口', area: '金沢駅', price: '8,000円〜' }],
+      mid: [{ name: 'ホテル日航金沢', area: '金沢駅', price: '20,000円〜' }],
+      high: [{ name: '金沢白鳥路 ホテル山楽', area: '兼六園近く', price: '35,000円〜' }]
+    }
+  },
+
+  hiroshima: {
+    name: '広島', area: 'Hiroshima Japan',
+    spots: [
+      { name: '原爆ドーム・平和記念公園', themes: ['culture'], desc: '世界遺産。平和への祈り' },
+      { name: '厳島神社（宮島）', themes: ['culture', 'photo', 'nature'], desc: '海に浮かぶ大鳥居' },
+      { name: '広島城', themes: ['culture'], desc: '鯉城と呼ばれる名城' },
+      { name: '縮景園', themes: ['nature', 'relax'], desc: '広島藩主の庭園' }
+    ],
+    food: [
+      { name: 'みっちゃん総本店 八丁堀店', themes: ['food'], desc: '広島お好み焼き発祥の店' },
+      { name: 'あなごめし うえの 宮島口本店', themes: ['food'], desc: '駅弁発祥の名物あなご飯' }
+    ],
+    hotels: {
+      low: [{ name: '東横INN広島駅前大橋南', area: '広島駅', price: '7,500円〜' }],
+      mid: [{ name: 'ANAクラウンプラザホテル広島', area: '中心部', price: '20,000円〜' }],
+      high: [{ name: 'シェラトングランドホテル広島', area: '広島駅直結', price: '35,000円〜' }]
+    }
+  },
+
+  kamakura: {
+    name: '鎌倉', area: 'Kamakura Japan',
+    spots: [
+      { name: '鶴岡八幡宮', themes: ['culture'], desc: '鎌倉のシンボル' },
+      { name: '高徳院 鎌倉大仏', themes: ['culture', 'photo'], desc: '青空の下の大仏様' },
+      { name: '長谷寺', themes: ['nature', 'photo'], desc: 'あじさいと海の眺望' },
+      { name: '小町通り', themes: ['food', 'shopping'], desc: '食べ歩きとお土産屋' },
+      { name: '由比ヶ浜・七里ヶ浜', themes: ['relax', 'photo'], desc: 'スラムダンクの聖地踏切も近く' }
+    ],
+    food: [
+      { name: 'こ寿々 鎌倉本店', themes: ['food'], desc: '名物わらび餅と蕎麦' },
+      { name: 'bills 七里ヶ浜', themes: ['food', 'photo'], desc: '世界一の朝食パンケーキ' }
+    ],
+    hotels: {
+      low: [{ name: 'WeBase 鎌倉', area: '由比ヶ浜', price: 'ドミ5,000円〜' }],
+      mid: [{ name: '鎌倉プリンスホテル', area: '七里ヶ浜', price: '25,000円〜' }],
+      high: [{ name: 'KAMAKURA HOTEL', area: '鎌倉駅近く', price: '50,000円〜' }]
+    }
+  },
+
+  // ===== 追加：山・自然 =====
+  karuizawa: {
+    name: '軽井沢', area: 'Karuizawa Japan',
+    spots: [
+      { name: '旧軽井沢銀座通り', themes: ['shopping', 'food'], desc: '老舗ジャムやベーカリー' },
+      { name: '雲場池', themes: ['nature', 'photo'], desc: '紅葉と新緑の名所' },
+      { name: '白糸の滝', themes: ['nature', 'photo'], desc: '幻想的なカーテン状の滝' },
+      { name: '軽井沢・プリンスショッピングプラザ', themes: ['shopping'], desc: '巨大アウトレット' },
+      { name: '石の教会・内村鑑三記念堂', themes: ['culture', 'photo'], desc: '自然と一体化した名建築' }
+    ],
+    food: [
+      { name: '川上庵 軽井沢 本店', themes: ['food'], desc: 'ハイセンスな蕎麦店' }
+    ],
+    hotels: {
+      low: [{ name: 'ホテル軽井沢1130', area: '中軽井沢', price: '10,000円〜' }],
+      mid: [{ name: '軽井沢マリオットホテル', area: '南軽井沢', price: '25,000円〜' }],
+      high: [
+        { name: '星のや軽井沢', area: '中軽井沢', price: '70,000円〜' },
+        { name: 'ホテル鹿島ノ森', area: '旧軽井沢', price: '40,000円〜' }
+      ]
+    }
+  },
+
+  shirakawago: {
+    name: '白川郷・五箇山', area: 'Shirakawago Japan',
+    spots: [
+      { name: '白川郷合掌造り集落', themes: ['culture', 'photo'], desc: '世界遺産の合掌造り' },
+      { name: '城山天守閣展望台', themes: ['photo'], desc: '集落全景のビュースポット' },
+      { name: '和田家', themes: ['culture'], desc: '国指定重要文化財の合掌造り' },
+      { name: '五箇山相倉合掌造り集落', themes: ['culture', 'nature'], desc: '静かな世界遺産集落' }
+    ],
+    food: [
+      { name: '蕎麦正 まつい', themes: ['food'], desc: '挽きたての手打ち蕎麦' }
+    ],
+    hotels: {
+      low: [{ name: '民宿 大田屋', area: '白川郷', price: '10,000円〜' }],
+      mid: [{ name: '白川郷の湯', area: '白川郷', price: '20,000円〜' }],
+      high: [{ name: '合掌乃宿 孫右ヱ門', area: '白川郷', price: '30,000円〜' }]
+    }
+  },
+
+  // ===== 追加：温泉地 =====
+  kinosaki: {
+    name: '城崎温泉', area: 'Kinosaki Onsen Japan',
+    spots: [
+      { name: '城崎温泉外湯めぐり（七湯）', themes: ['relax', 'culture'], desc: '浴衣で温泉街を巡る' },
+      { name: '城崎温泉ロープウェイ・大師山', themes: ['photo', 'nature'], desc: '温泉街と日本海を一望' },
+      { name: '玄武洞公園', themes: ['nature', 'photo'], desc: '六角形の柱状節理' },
+      { name: '城崎マリンワールド', themes: ['adventure'], desc: '日本海側最大級の水族館' }
+    ],
+    food: [
+      { name: '海中苑', themes: ['food'], desc: '冬は松葉ガニ、夏は但馬牛' }
+    ],
+    hotels: {
+      low: [{ name: 'ホテル金波楼', area: '城崎温泉駅近く', price: '15,000円〜' }],
+      mid: [{ name: '西村屋ホテル招月庭', area: '城崎温泉', price: '30,000円〜' }],
+      high: [{ name: '西村屋本館', area: '城崎温泉', price: '50,000円〜' }]
+    }
+  },
+
+  kurokawa: {
+    name: '黒川温泉', area: 'Kurokawa Onsen Japan',
+    spots: [
+      { name: '入湯手形で湯めぐり', themes: ['relax', 'culture'], desc: '3つの露天風呂を選んで入浴' },
+      { name: '丸鈴橋', themes: ['photo'], desc: '黒川温泉の風景の中心' },
+      { name: 'いご坂', themes: ['photo'], desc: '石畳の風情ある坂道' },
+      { name: '大観峰（車30分）', themes: ['nature', 'photo'], desc: '阿蘇の絶景パノラマ' }
+    ],
+    food: [
+      { name: 'patisserie 麓 ふもと', themes: ['food'], desc: '温泉まんじゅうの新名物' }
+    ],
+    hotels: {
+      low: [{ name: '里の湯 和らく', area: '黒川温泉', price: '15,000円〜' }],
+      mid: [{ name: 'お宿 玄河', area: '黒川温泉', price: '25,000円〜' }],
+      high: [
+        { name: '山みず木', area: '黒川温泉', price: '40,000円〜' },
+        { name: '御客屋', area: '黒川温泉', price: '35,000円〜' }
+      ]
+    }
+  },
+
+  arima: {
+    name: '有馬温泉', area: 'Arima Onsen Japan',
+    spots: [
+      { name: '金の湯', themes: ['relax'], desc: '名物・含鉄塩化物泉' },
+      { name: '銀の湯', themes: ['relax'], desc: '炭酸泉とラジウム泉' },
+      { name: '太閤の湯殿館', themes: ['culture'], desc: '秀吉が築いた湯山御殿' },
+      { name: '湯本坂', themes: ['photo', 'shopping'], desc: 'レトロな温泉街散歩' }
+    ],
+    food: [
+      { name: 'ありまサイダー本舗', themes: ['food'], desc: '名物・ありまサイダー' }
+    ],
+    hotels: {
+      low: [{ name: '有馬グランドホテル', area: '有馬温泉', price: '20,000円〜' }],
+      mid: [{ name: '兵衛向陽閣', area: '有馬温泉', price: '30,000円〜' }],
+      high: [
+        { name: '中の坊瑞苑', area: '有馬温泉', price: '60,000円〜' },
+        { name: '陶泉 御所坊', area: '有馬温泉', price: '50,000円〜' }
+      ]
+    }
+  },
+
+  noboribetsu: {
+    name: '登別温泉', area: 'Noboribetsu Onsen Japan',
+    spots: [
+      { name: '地獄谷', themes: ['nature', 'photo'], desc: '硫黄香る火山活動の景観' },
+      { name: '大湯沼', themes: ['nature'], desc: '巨大な天然湯沼' },
+      { name: '登別マリンパークニクス', themes: ['adventure', 'culture'], desc: 'お城型の水族館' },
+      { name: '登別伊達時代村', themes: ['culture', 'adventure'], desc: '江戸時代テーマパーク' }
+    ],
+    food: [
+      { name: '味の大王 登別本店', themes: ['food'], desc: '名物・地獄ラーメン' }
+    ],
+    hotels: {
+      low: [{ name: '湯元 オロフレ荘', area: '登別', price: '12,000円〜' }],
+      mid: [{ name: '登別グランドホテル', area: '登別温泉', price: '20,000円〜' }],
+      high: [{ name: '滝乃家', area: '登別温泉', price: '50,000円〜' }]
+    }
+  },
+
+  // ===== 追加：海外アジア =====
+  singapore: {
+    name: 'シンガポール', area: 'Singapore',
+    spots: [
+      { name: 'マリーナベイ・サンズ展望台', themes: ['photo', 'shopping'], desc: '空中プールと夜景' },
+      { name: 'ガーデンズ・バイ・ザ・ベイ', themes: ['photo', 'nature'], desc: 'スーパーツリーのライトショー' },
+      { name: 'マーライオン公園', themes: ['photo', 'culture'], desc: '定番の写真スポット' },
+      { name: 'セントーサ島', themes: ['adventure', 'relax'], desc: 'USSとビーチ' },
+      { name: 'チャイナタウン・リトルインディア', themes: ['food', 'culture'], desc: '多民族都市の食文化' }
+    ],
+    food: [
+      { name: 'Tian Tian Hainanese Chicken Rice', themes: ['food'], desc: 'マックスウェルの名店' },
+      { name: 'Jumbo Seafood', themes: ['food'], desc: 'チリクラブの代表店' }
+    ],
+    hotels: {
+      low: [{ name: 'The POD Capsule Hotel', area: 'カンポングラム', price: '6,000円〜' }],
+      mid: [{ name: 'Hotel Boss', area: 'カンポングラム', price: '15,000円〜' }],
+      high: [{ name: 'Marina Bay Sands', area: 'マリーナ', price: '60,000円〜' }]
+    }
+  },
+
+  hongkong: {
+    name: '香港', area: 'Hong Kong',
+    spots: [
+      { name: 'ヴィクトリア・ピーク', themes: ['photo', 'nature'], desc: '100万ドルの夜景' },
+      { name: 'スター・フェリー', themes: ['photo', 'culture'], desc: '名物の海峡渡し船' },
+      { name: '女人街・廟街ナイトマーケット', themes: ['shopping', 'food'], desc: '夜の屋台と買い物' },
+      { name: '香港ディズニーランド', themes: ['adventure'], desc: 'コンパクトに楽しめるパーク' },
+      { name: '大澳（タイオー）', themes: ['photo', 'nature'], desc: '水上家屋の漁村' }
+    ],
+    food: [
+      { name: '添好運 ティム・ホー・ワン', themes: ['food'], desc: 'ミシュラン点心の名店' },
+      { name: '蘭芳園', themes: ['food'], desc: '香港式ミルクティーの元祖' }
+    ],
+    hotels: {
+      low: [{ name: 'Mini Hotel Causeway Bay', area: '銅鑼湾', price: '10,000円〜' }],
+      mid: [{ name: 'Cordis Hong Kong', area: '旺角', price: '25,000円〜' }],
+      high: [{ name: 'The Peninsula Hong Kong', area: '尖沙咀', price: '90,000円〜' }]
+    }
+  },
+
+  hochiminh: {
+    name: 'ホーチミン', area: 'Ho Chi Minh City Vietnam',
+    spots: [
+      { name: 'ベンタン市場', themes: ['shopping', 'food'], desc: '雑貨と屋台グルメ' },
+      { name: 'サイゴン大教会', themes: ['culture', 'photo'], desc: 'パリのノートルダム風' },
+      { name: '中央郵便局', themes: ['culture', 'photo'], desc: 'コロニアル建築の傑作' },
+      { name: '統一会堂', themes: ['culture'], desc: 'ベトナム戦争の歴史' },
+      { name: 'メコン川クルーズ', themes: ['adventure', 'nature'], desc: '日帰りツアーで田園体験' }
+    ],
+    food: [
+      { name: 'Pho 2000', themes: ['food'], desc: '行列のフォー専門店' },
+      { name: 'Bánh Mì Huỳnh Hoa', themes: ['food'], desc: 'バインミーの聖地' }
+    ],
+    hotels: {
+      low: [{ name: 'A&Em Hotel', area: '1区', price: '5,000円〜' }],
+      mid: [{ name: 'Liberty Central Saigon Citypoint', area: '1区', price: '15,000円〜' }],
+      high: [{ name: 'Park Hyatt Saigon', area: '1区', price: '40,000円〜' }]
+    }
+  },
+
+  // ===== 追加：海外ヨーロッパ =====
+  london: {
+    name: 'ロンドン', area: 'London UK',
+    spots: [
+      { name: 'バッキンガム宮殿', themes: ['culture', 'photo'], desc: '衛兵交代式が見もの' },
+      { name: '大英博物館', themes: ['culture'], desc: '無料で世界の至宝を展示' },
+      { name: 'タワーブリッジ・ロンドン塔', themes: ['photo', 'culture'], desc: 'テムズ川の象徴' },
+      { name: 'ロンドン・アイ', themes: ['photo'], desc: '大観覧車から街を一望' },
+      { name: 'カムデン・マーケット', themes: ['shopping', 'food'], desc: '個性派の露店街' },
+      { name: 'ノッティング・ヒル・ポートベローマーケット', themes: ['photo', 'shopping'], desc: 'カラフルな街並みと骨董市' }
+    ],
+    food: [
+      { name: 'Borough Market', themes: ['food', 'shopping'], desc: 'ロンドン最大級のフードマーケット' },
+      { name: 'Sketch London', themes: ['food', 'photo'], desc: 'ピンクの内装で有名なカフェ' }
+    ],
+    hotels: {
+      low: [{ name: 'YHA London Central', area: 'マリルボーン', price: 'ドミ5,000円〜' }],
+      mid: [{ name: 'Premier Inn London County Hall', area: 'サウスバンク', price: '25,000円〜' }],
+      high: [{ name: 'The Savoy', area: 'コヴェント・ガーデン', price: '120,000円〜' }]
+    }
+  },
+
+  amsterdam: {
+    name: 'アムステルダム', area: 'Amsterdam Netherlands',
+    spots: [
+      { name: 'ゴッホ美術館', themes: ['culture'], desc: '世界最大のゴッホコレクション' },
+      { name: 'アンネ・フランクの家', themes: ['culture'], desc: '事前予約必須の歴史的場所' },
+      { name: '運河クルーズ', themes: ['photo', 'relax'], desc: '世界遺産の運河を巡る' },
+      { name: 'ダム広場・王宮', themes: ['culture', 'photo'], desc: '街の中心' },
+      { name: 'キューケンホフ公園（春）', themes: ['nature', 'photo'], desc: '世界最大のチューリップ庭園' }
+    ],
+    food: [
+      { name: 'Pancakes Amsterdam', themes: ['food'], desc: '名物オランダパンケーキ' }
+    ],
+    hotels: {
+      low: [{ name: 'Generator Amsterdam', area: 'ウースト', price: 'ドミ4,500円〜' }],
+      mid: [{ name: 'Hotel V Nesplein', area: '中心部', price: '30,000円〜' }],
+      high: [{ name: 'Waldorf Astoria Amsterdam', area: '紳士運河', price: '90,000円〜' }]
+    }
+  },
+
+  // ===== 追加：海外アメリカ =====
+  losangeles: {
+    name: 'ロサンゼルス', area: 'Los Angeles USA',
+    spots: [
+      { name: 'ハリウッドサイン・ハリウッド通り', themes: ['photo', 'culture'], desc: 'ウォーク・オブ・フェイム' },
+      { name: 'グリフィス天文台', themes: ['photo', 'nature'], desc: 'ラ・ラ・ランドの夜景スポット' },
+      { name: 'サンタモニカ・ピア', themes: ['photo', 'relax'], desc: 'ルート66終着の桟橋' },
+      { name: 'ベニスビーチ', themes: ['photo', 'adventure'], desc: '個性派のビーチ街' },
+      { name: 'ユニバーサル・スタジオ・ハリウッド', themes: ['adventure'], desc: '本場のテーマパーク' },
+      { name: 'ゲッティ・センター', themes: ['culture', 'photo'], desc: '丘の上の無料美術館' }
+    ],
+    food: [
+      { name: 'In-N-Out Burger Hollywood', themes: ['food'], desc: '西海岸の代表バーガー' },
+      { name: 'Grand Central Market', themes: ['food'], desc: '多国籍フードホール' }
+    ],
+    hotels: {
+      low: [{ name: 'Freehand Los Angeles', area: 'ダウンタウン', price: '15,000円〜' }],
+      mid: [{ name: 'Loews Hollywood Hotel', area: 'ハリウッド', price: '35,000円〜' }],
+      high: [{ name: 'The Beverly Hills Hotel', area: 'ビバリーヒルズ', price: '150,000円〜' }]
+    }
+  },
+
+  lasvegas: {
+    name: 'ラスベガス', area: 'Las Vegas USA',
+    spots: [
+      { name: 'ベラージオ噴水ショー', themes: ['photo'], desc: '無料で見られる名物ショー' },
+      { name: 'ストリップ大通り', themes: ['photo', 'shopping'], desc: '夜のネオン散歩' },
+      { name: 'フリーモントストリート', themes: ['photo', 'adventure'], desc: 'LEDアーケードと旧市街' },
+      { name: 'グランドキャニオン日帰りツアー', themes: ['nature', 'adventure'], desc: '世界遺産の大峡谷' },
+      { name: 'シルク・ドゥ・ソレイユ各種公演', themes: ['culture'], desc: '本場のショーを鑑賞' }
+    ],
+    food: [
+      { name: 'Bacchanal Buffet (Caesars Palace)', themes: ['food'], desc: '高級ビュッフェの代名詞' }
+    ],
+    hotels: {
+      low: [{ name: 'Excalibur Hotel & Casino', area: 'ストリップ南', price: '10,000円〜' }],
+      mid: [{ name: 'The Venetian Resort', area: 'ストリップ中央', price: '25,000円〜' }],
+      high: [{ name: 'Wynn Las Vegas', area: 'ストリップ北', price: '60,000円〜' }]
+    }
+  },
+
+  sanfrancisco: {
+    name: 'サンフランシスコ', area: 'San Francisco USA',
+    spots: [
+      { name: 'ゴールデンゲートブリッジ', themes: ['photo', 'culture'], desc: '世界一有名な吊り橋' },
+      { name: 'アルカトラズ島', themes: ['culture', 'adventure'], desc: 'かつての監獄島ツアー' },
+      { name: 'フィッシャーマンズワーフ', themes: ['food', 'photo'], desc: 'クラムチャウダーとアシカ' },
+      { name: 'ロンバートストリート', themes: ['photo'], desc: '世界一曲がりくねった坂道' },
+      { name: 'ケーブルカー乗車', themes: ['culture', 'photo'], desc: '坂の街の名物交通' }
+    ],
+    food: [
+      { name: 'Boudin Bakery Fisherman\'s Wharf', themes: ['food'], desc: 'サワードウブレッドボウル' }
+    ],
+    hotels: {
+      low: [{ name: 'HI San Francisco Downtown Hostel', area: 'ダウンタウン', price: 'ドミ5,500円〜' }],
+      mid: [{ name: 'Hotel Zephyr', area: 'フィッシャーマンズワーフ', price: '35,000円〜' }],
+      high: [{ name: 'Fairmont San Francisco', area: 'ノブヒル', price: '80,000円〜' }]
+    }
   }
 };
 
 // 行き先タイプごとの都市リスト
 const DEST_CITIES = {
-  city: ['tokyo', 'kyoto', 'osaka', 'yokohama', 'fukuoka'],
+  city: ['tokyo', 'kyoto', 'osaka', 'yokohama', 'fukuoka', 'nagoya', 'kobe', 'kanazawa', 'hiroshima', 'kamakura'],
   beach: ['okinawa_main', 'miyako', 'ishigaki'],
-  mountain: ['hokkaido', 'kamikochi', 'yakushima'],
-  hotspring: ['hakone', 'kusatsu', 'yufuin', 'beppu'],
-  overseas_asia: ['seoul', 'taipei', 'bangkok'],
-  overseas_europe: ['paris', 'rome', 'barcelona'],
-  overseas_america: ['newyork', 'hawaii']
+  mountain: ['hokkaido', 'kamikochi', 'yakushima', 'karuizawa', 'shirakawago'],
+  hotspring: ['hakone', 'kusatsu', 'yufuin', 'beppu', 'kinosaki', 'kurokawa', 'arima', 'noboribetsu'],
+  overseas_asia: ['seoul', 'taipei', 'bangkok', 'singapore', 'hongkong', 'hochiminh'],
+  overseas_europe: ['paris', 'rome', 'barcelona', 'london', 'amsterdam'],
+  overseas_america: ['newyork', 'hawaii', 'losangeles', 'lasvegas', 'sanfrancisco']
 };
+
+// 国内/海外フラグ（検索リンク出し分け用）
+const OVERSEAS_DESTS = new Set(['overseas_asia', 'overseas_europe', 'overseas_america']);
 
 const BUDGETS = {
   low: { hotel: 'ゲストハウス・ビジネスホテル', meal: 'チェーン店・ローカル食堂', transport: '公共交通中心', tip: '駅近の格安宿、ランチ重視で外食コスト圧縮' },

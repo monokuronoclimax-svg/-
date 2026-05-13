@@ -242,6 +242,44 @@ h2 {
 }
 .hotel-links a:hover { background: #eff6ff; }
 
+.search-sections {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 0.85rem;
+  margin-bottom: 1.5rem;
+}
+.search-section {
+  background: #f8fafc;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 0.85rem 1rem;
+}
+.search-section h4 {
+  font-size: 0.95rem;
+  color: var(--primary-dark);
+  margin-bottom: 0.6rem;
+}
+.search-links {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+.search-links a {
+  font-size: 0.85rem;
+  padding: 0.35rem 0.7rem;
+  background: white;
+  border: 1px solid var(--border);
+  color: var(--primary-dark);
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: background 0.15s;
+}
+.search-links a:hover {
+  background: #eff6ff;
+  border-color: var(--primary);
+}
+
 .hotel-search-all {
   display: flex;
   gap: 0.6rem;

@@ -20,6 +20,73 @@ function rakutenLink(area) {
   return `https://travel.rakuten.co.jp/dsearch/?f_keyword=${encodeURIComponent(area)}`;
 }
 
+// ===== 各種検索リンク =====
+function searchLinks(cityName, area, destKey) {
+  const isOverseas = OVERSEAS_DESTS.has(destKey);
+  const q = encodeURIComponent(cityName);
+  const qArea = encodeURIComponent(area);
+
+  const flights = [
+    { label: '✈️ Google フライト', url: `https://www.google.com/travel/flights?q=${encodeURIComponent('Flights to ' + area)}` },
+    { label: '✈️ Skyscanner', url: `https://www.skyscanner.jp/transport/flights-to/?destination=${qArea}` },
+    { label: '✈️ HIS', url: `https://www.his-j.com/oth/search/?destination=${q}` }
+  ];
+
+  const trainsDomestic = [
+    { label: '🚆 Yahoo!路線情報', url: `https://transit.yahoo.co.jp/search/print?from=&to=${q}` },
+    { label: '🚆 ジョルダン', url: `https://www.jorudan.co.jp/norikae/?eki2=${q}` },
+    { label: '🚄 えきねっと（新幹線）', url: `https://www.eki-net.com/personal/top/index` }
+  ];
+
+  const busDomestic = [
+    { label: '🚌 高速バス（バスもり）', url: `https://www.bus-mori.com/search/?keyword=${q}` },
+    { label: '🚌 楽天トラベル高速バス', url: `https://travel.rakuten.co.jp/bus/?f_keyword=${q}` }
+  ];
+
+  const rentalCar = [
+    { label: '🚗 楽天トラベル レンタカー', url: `https://travel.rakuten.co.jp/cars/?f_keyword=${qArea}` },
+    { label: '🚗 じゃらんレンタカー', url: `https://www.jalan.net/rentacar/?keyword=${q}` }
+  ];
+
+  const activities = isOverseas ? [
+    { label: '🎟 KKday（現地ツアー）', url: `https://www.kkday.com/ja/search?keyword=${qArea}` },
+    { label: '🎟 Klook（現地ツアー）', url: `https://www.klook.com/ja/search/?query=${qArea}` },
+    { label: '🎟 VELTRA（オプショナル）', url: `https://www.veltra.com/jp/search/?keywords=${qArea}` },
+    { label: '⭐ Tripadvisor', url: `https://www.tripadvisor.jp/Search?q=${qArea}` }
+  ] : [
+    { label: '🎟 じゃらん遊び・体験', url: `https://www.jalan.net/activity/list/?keyword=${q}` },
+    { label: '🎟 アソビュー！', url: `https://www.asoview.com/base/search/?freeword=${q}` },
+    { label: '🎟 VELTRA', url: `https://www.veltra.com/jp/japan/search/?keywords=${q}` },
+    { label: '⭐ Tripadvisor', url: `https://www.tripadvisor.jp/Search?q=${q}` }
+  ];
+
+  const tours = isOverseas ? [
+    { label: '📦 JTB海外パック', url: `https://www.jtb.co.jp/kaigai_pack/search/?keyword=${q}` },
+    { label: '📦 HIS海外ツアー', url: `https://www.his-j.com/Default.aspx?searchType=Tour&destination=${q}` }
+  ] : [
+    { label: '📦 JTB国内パック', url: `https://www.jtb.co.jp/kokunai-pack/search/?keyword=${q}` },
+    { label: '📦 日本旅行（赤い風船）', url: `https://www.nta.co.jp/kokunai/search/?keyword=${q}` }
+  ];
+
+  const sections = [
+    { title: '✈️ 飛行機', items: flights }
+  ];
+  if (!isOverseas) {
+    sections.push({ title: '🚆 電車・新幹線', items: trainsDomestic });
+    sections.push({ title: '🚌 高速バス', items: busDomestic });
+    sections.push({ title: '🚗 レンタカー', items: rentalCar });
+  } else {
+    sections.push({ title: '🚗 レンタカー（海外）', items: [
+      { label: '🚗 エクスペディア レンタカー', url: `https://www.expedia.co.jp/Cars?destination=${qArea}` },
+      { label: '🚗 Rentalcars.com', url: `https://www.rentalcars.com/SearchResultsRedirect.do?location=${qArea}` }
+    ]});
+  }
+  sections.push({ title: '🎟 現地アクティビティ', items: activities });
+  sections.push({ title: '📦 パッケージツアー', items: tours });
+
+  return sections;
+}
+
 // ===== 都市セレクトの動的更新 =====
 function updateCityOptions() {
   const dest = document.getElementById('destination').value;
@@ -107,6 +174,7 @@ function generatePlan(input) {
 
   return {
     cityKey, city, days,
+    destination: input.destination,
     season: input.season,
     party: input.party,
     budget: input.budget,
@@ -188,6 +256,18 @@ function renderPlan(plan) {
       <a class="search-btn" href="${rakutenLink(plan.city.name)}" target="_blank" rel="noopener">
         🔍 楽天トラベルで「${plan.city.name}」を検索
       </a>
+    </div>
+
+    <h2>🔍 予約・検索リンク</h2>
+    <div class="search-sections">
+      ${searchLinks(plan.city.name, plan.city.area, plan.destination).map(sec => `
+        <div class="search-section">
+          <h4>${sec.title}</h4>
+          <div class="search-links">
+            ${sec.items.map(it => `<a href="${it.url}" target="_blank" rel="noopener">${it.label}</a>`).join('')}
+          </div>
+        </div>
+      `).join('')}
     </div>
 
     <div class="summary-box">
